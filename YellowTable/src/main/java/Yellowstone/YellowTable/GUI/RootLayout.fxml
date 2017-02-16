@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.*?>
+<?import org.controlsfx.control.CheckComboBox?>
+<?import javafx.scene.control.Menu?>
+
+<BorderPane maxHeight="768.0" maxWidth="1024.0" minHeight="768.0"
+	minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0"
+	style="-fx-background-color: #FDF8FF;" stylesheets="@StyleSheets/Main.css"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="Yellowstone.YellowTable.GUI.RootLayoutViewController">
+	<bottom>
+		<TabPane id=" " prefHeight="650.0" prefWidth="1024.0"
+			style="-fx-border-image-width: 1;" tabClosingPolicy="UNAVAILABLE"
+			BorderPane.alignment="TOP_LEFT">
+			<tabs>
+				<Tab text="Hinweise">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<GridPane layoutX="11.0" layoutY="28.0" maxHeight="500.0"
+									maxWidth="650.0" minHeight="408.0" minWidth="648.0" prefHeight="408.0"
+									prefWidth="648.0" AnchorPane.leftAnchor="11.0"
+									AnchorPane.rightAnchor="355.0" AnchorPane.topAnchor="28.0">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES"
+											maxWidth="650.0" minWidth="650.0" prefWidth="650.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints maxHeight="30.0" minHeight="30.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints maxHeight="140.0" minHeight="140.0"
+											prefHeight="140.0" vgrow="SOMETIMES" />
+										<RowConstraints maxHeight="120.0" minHeight="120.0"
+											prefHeight="120.0" vgrow="SOMETIMES" />
+										<RowConstraints maxHeight="120.0" minHeight="120.0"
+											prefHeight="120.0" vgrow="SOMETIMES" />
+									</rowConstraints>
+									<children>
+										<Text strokeType="OUTSIDE" strokeWidth="0.0"
+											text="In diesem Menü können Sie die Haupteinstellungen für die Stundenplanerstellung vornehmen. Dabei besitzen Sie unter dem Reiter &quot;Übersicht&quot; eine Zusammenfassung ihrer bisherigen Planung. Sie können damit beginnen Personal, Räume, Fächer, Jahrgänge und Klassen hinzuzufügen."
+											textAlignment="JUSTIFY" wrappingWidth="600.0"
+											GridPane.halignment="CENTER" GridPane.rowIndex="1"
+											GridPane.valignment="TOP">
+											<font>
+												<Font size="18.0" />
+											</font>
+										</Text>
+										<Text strokeType="OUTSIDE" strokeWidth="0.0"
+											text="Im weiteren Verlauf können Sie dann die Lehrerwünsche hinzufügen, Klassenpläne verwalten sowie Stundenpläne für Personal und Klassen anzeigen lassen. Außerdem ist es Ihnen möglich sämtliche Pläne anzeigen und ausdrucken zu lassen. "
+											textAlignment="JUSTIFY" wrappingWidth="600.0"
+											GridPane.halignment="CENTER" GridPane.rowIndex="2"
+											GridPane.valignment="TOP">
+											<font>
+												<Font size="18.0" />
+											</font>
+										</Text>
+										<Text layoutX="35.0" layoutY="152.0" strokeType="OUTSIDE"
+											strokeWidth="0.0"
+											text="Falls Sie einen Fehler begangen haben, können Sie unter der Menüleiste Aktionen rückgängig machen oder neue Projekte beginnen und laden. Hier können Sie auch zu den Standardeinstellungen zurückkehren oder bei zusätzlichen  Fragen das Handbuch laden."
+											textAlignment="JUSTIFY" wrappingWidth="600.0"
+											GridPane.halignment="CENTER" GridPane.rowIndex="3"
+											GridPane.valignment="TOP">
+											<font>
+												<Font size="18.0" />
+											</font>
+										</Text>
+									</children>
+								</GridPane>
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab closable="false" text="Räume">
+					<content>
+						<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+							minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+							prefWidth="1014.0">
+							<children>
+								<ScrollPane layoutX="420.0" layoutY="49.0" maxHeight="500.0"
+									maxWidth="600.0" minHeight="500.0" minWidth="600.0" prefHeight="500.0"
+									prefViewportHeight="550.0" prefViewportWidth="410.0" prefWidth="600.0"
+									styleClass="border" AnchorPane.bottomAnchor="150.0"
+									AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="40.0"
+									AnchorPane.topAnchor="50.0">
+									<content>
+										<TableView fx:id="roomTable" layoutX="399.0"
+											layoutY="30.0" minHeight="700.0" minWidth="585.0" prefHeight="700.0"
+											prefWidth="585.0" styleClass="border">
+											<columns>
+												<TableColumn fx:id="roomTitleColumn" editable="false"
+													maxWidth="200.0" minWidth="100.0" prefWidth="199.0"
+													sortable="false" text="Bezeichnung" />
+												<TableColumn fx:id="roomBuildingColumn"
+													editable="false" maxWidth="200.0" minWidth="100.0"
+													prefWidth="149.0" sortable="false" text="Standort" />
+												<TableColumn fx:id="roomNumberColumn" editable="false"
+													maxWidth="200.0" minWidth="50.0" prefWidth="99.0" sortable="false"
+													text="Nummer" />
+												<TableColumn fx:id="roomFunctionColumn"
+													editable="false" maxWidth="200.0" minWidth="100.0"
+													prefWidth="149.0" sortable="false" text="Funktion" />
+											</columns>
+										</TableView>
+									</content>
+								</ScrollPane>
+								<TextField fx:id="roomTitle" layoutX="199.0" layoutY="119.0"
+									maxHeight="25.0" maxWidth="144.0" minHeight="25.0" minWidth="144.0"
+									prefHeight="25.0" prefWidth="144.0" styleClass="textfield"
+									AnchorPane.leftAnchor="200.0">
+									<cursor>
+										<Cursor fx:constant="DEFAULT" />
+									</cursor>
+								</TextField>
+								<TextField fx:id="roomNumber" layoutX="199.0" layoutY="174.0"
+									maxHeight="25.0" maxWidth="144.0" minHeight="25.0" minWidth="144.0"
+									prefHeight="25.0" prefWidth="144.0" styleClass="textfield"
+									AnchorPane.leftAnchor="200.0">
+									<cursor>
+										<Cursor fx:constant="DEFAULT" />
+									</cursor>
+								</TextField>
+								<ComboBox fx:id="roomBuilding" layoutX="199.0" layoutY="249.0"
+									maxWidth="144.0" minHeight="27.0" minWidth="144.0" prefHeight="27.0"
+									prefWidth="144.0" promptText="Standorte" AnchorPane.leftAnchor="200.0" />
+								<ComboBox fx:id="roomFunction" layoutX="199.0" layoutY="301.0"
+									maxWidth="144.0" minHeight="27.0" minWidth="144.0" prefHeight="27.0"
+									promptText="Raumfunktionen" AnchorPane.leftAnchor="200.0" />
+								<Label layoutX="35.0" layoutY="122.0" prefHeight="27.0"
+									prefWidth="128.0" styleClass="item-title" text="Bezeichnung:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="122.0" />
+								<Button layoutX="14.0" layoutY="335.0" minHeight="30.0"
+									minWidth="100.0" mnemonicParsing="false" onAction="#btnNewRoom"
+									styleClass="border" text="Hinzufügen" AnchorPane.leftAnchor="14.0"
+									AnchorPane.topAnchor="450.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="124.0" layoutY="450.0" minHeight="30.0"
+									minWidth="100.0" mnemonicParsing="false" onAction="#btnEditRoom"
+									styleClass="border" text="Bearbeiten" AnchorPane.leftAnchor="134.0"
+									AnchorPane.topAnchor="450.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="236.0" layoutY="450.0" minHeight="30.0"
+									minWidth="100.0" mnemonicParsing="false" onAction="#btnDeleteRoom"
+									styleClass="border" text="Entfernen" AnchorPane.leftAnchor="254.0"
+									AnchorPane.topAnchor="450.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Label layoutX="35.0" layoutY="177.0" prefHeight="27.0"
+									prefWidth="114.0" styleClass="item-title" text="Nummer*:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="177.0" />
+								<Label layoutX="35.0" layoutY="248.0" prefHeight="27.0"
+									prefWidth="120.0" styleClass="item-title" text="Standort:"
+									AnchorPane.topAnchor="248.0" />
+								<Label layoutX="35.0" layoutY="303.0" prefHeight="27.0"
+									prefWidth="118.0" styleClass="item-title" text="Funktion:"
+									AnchorPane.topAnchor="303.0" />
+								<Label layoutX="290.0" layoutY="518.0" text="*optional"
+									AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="514.0" />
+							</children>
+							<styleClass>
+								<String fx:value="anchor-pane" />
+								<String fx:value="background" />
+							</styleClass>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab closable="false" text="Fächer">
+					<content>
+						<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+							minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+							prefWidth="1014.0">
+							<children>
+								<TextField fx:id="subjectTitle" layoutX="207.0"
+									layoutY="120.0" minHeight="25.0" minWidth="144.0" prefHeight="25.0"
+									prefWidth="144.0" styleClass="textfield" AnchorPane.leftAnchor="200.0">
+									<cursor>
+										<Cursor fx:constant="DEFAULT" />
+									</cursor>
+								</TextField>
+								<TextField fx:id="subjectDuration" layoutX="207.0"
+									layoutY="175.0" minHeight="25.0" minWidth="144.0" prefHeight="25.0"
+									prefWidth="144.0" styleClass="textfield" AnchorPane.leftAnchor="200.0">
+									<cursor>
+										<Cursor fx:constant="DEFAULT" />
+									</cursor>
+								</TextField>
+								<ComboBox fx:id="subjectRoomFunction" layoutX="207.0"
+									layoutY="246.0" minHeight="27.0" minWidth="144.0" prefWidth="144.0"
+									promptText="Raumfunktionen" AnchorPane.leftAnchor="200.0" />
+								<ComboBox fx:id="subjectDIFFICULTY" layoutX="207.0"
+									layoutY="301.0" minHeight="27.0" minWidth="144.0" prefHeight="27.0"
+									prefWidth="144.0" promptText="Schwierigkeit"
+									AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="301.0" />
+								<Button layoutX="21.0" layoutY="450.0" mnemonicParsing="false"
+									onAction="#btnNewSubject" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Hinzufügen" AnchorPane.leftAnchor="14.0"
+									AnchorPane.topAnchor="450.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="141.0" layoutY="450.0" mnemonicParsing="false"
+									onAction="#btnEditSubject" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Bearbeiten" AnchorPane.leftAnchor="134.0"
+									AnchorPane.topAnchor="450.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="261.0" layoutY="450.0" mnemonicParsing="false"
+									onAction="#btnDeleteSubject" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Entfernen" AnchorPane.leftAnchor="254.0"
+									AnchorPane.topAnchor="450.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Label layoutX="42.0" layoutY="303.0" prefHeight="21.0"
+									prefWidth="144.0" styleClass="item-title" text="Schwierigkeitsgrad:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="303.0" />
+								<Label layoutX="42.0" layoutY="177.0" prefHeight="21.0"
+									prefWidth="97.0" styleClass="item-title" text="Dauer*:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="177.0" />
+								<Label layoutX="42.0" layoutY="122.0" prefHeight="21.0"
+									prefWidth="128.0" styleClass="item-title" text="Bezeichnung:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="122.0" />
+								<Label layoutX="42.0" layoutY="248.0" prefHeight="21.0"
+									prefWidth="141.0" styleClass="item-title" text="Raum-Funktion:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="248.0" />
+								<Label layoutX="287.0" layoutY="514.0" text="*optional"
+									AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="514.0" />
+								<ScrollPane maxHeight="500.0" maxWidth="600.0"
+									minHeight="500.0" minWidth="600.0" prefHeight="500.0"
+									prefViewportHeight="550.0" prefViewportWidth="410.0" prefWidth="600.0"
+									styleClass="border" AnchorPane.bottomAnchor="150.0"
+									AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="40.0"
+									AnchorPane.topAnchor="50.0">
+									<content>
+										<TableView fx:id="subjectTable" layoutX="399.0"
+											layoutY="30.0" minHeight="700.0" minWidth="585.0" prefHeight="700.0"
+											prefWidth="585.0" styleClass="border">
+											<columns>
+												<TableColumn fx:id="subjectTitleColumn"
+													editable="false" maxWidth="250.0" minWidth="100.0"
+													prefWidth="200.0" sortable="false" text="Bezeichnung" />
+												<TableColumn fx:id="subjectDurationColumn"
+													editable="false" maxWidth="150.0" minWidth="75.0"
+													prefWidth="100.0" sortable="false" text="Dauer" />
+												<TableColumn fx:id="subjectRoomFunctionColumn"
+													editable="false" maxWidth="200.0" minWidth="75.0"
+													prefWidth="140.0" sortable="false" text="Funktion" />
+												<TableColumn fx:id="subjectDifficultyColumn"
+													editable="false" maxWidth="200.0" minWidth="100.0"
+													prefWidth="149.0" sortable="false" text="Schwierigkeitsgrad" />
+											</columns>
+										</TableView>
+									</content>
+								</ScrollPane>
+							</children>
+							<styleClass>
+								<String fx:value="anchor-pane" />
+								<String fx:value="background" />
+							</styleClass>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab closable="false" text="LehrerInnen">
+					<content>
+						<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+							minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+							prefWidth="1014.0">
+							<children>
+								<ScrollPane layoutX="420.0" layoutY="49.0" maxHeight="500.0"
+									maxWidth="600.0" minHeight="500.0" minWidth="600.0" prefHeight="500.0"
+									prefViewportHeight="550.0" prefViewportWidth="410.0" prefWidth="600.0"
+									styleClass="border" AnchorPane.bottomAnchor="150.0"
+									AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="40.0"
+									AnchorPane.topAnchor="50.0">
+									<content>
+										<TableView fx:id="teacherTable" layoutX="399.0"
+											layoutY="30.0" minHeight="700.0" minWidth="585.0" prefHeight="700.0"
+											prefWidth="585.0">
+											<columns>
+												<TableColumn fx:id="teacherShortColumn"
+													editable="false" maxWidth="120.0" minWidth="100.0"
+													prefWidth="100.0" sortable="false" text="Kürzel" />
+												<TableColumn fx:id="teacherLNameColumn"
+													editable="false" maxWidth="300.0" minWidth="100.0"
+													prefWidth="130.0" sortable="false" text="Name" />
+												<TableColumn fx:id="teacherFNameColumn"
+													editable="false" maxWidth="150.0" minWidth="50.0"
+													prefWidth="130.0" sortable="false" text="Vorname" />
+												<TableColumn fx:id="teacherHoursColumn"
+													editable="false" maxWidth="115.0" minWidth="20.0"
+													prefWidth="115.0" sortable="false" text="Stunden" />
+												<TableColumn fx:id="teacherMinusHoursColumn"
+													editable="false" maxWidth="120.0" minWidth="120.0"
+													prefWidth="120.0" resizable="false" sortable="false" text="Minusstunden" />
+											</columns>
+											<styleClass>
+												<String fx:value="border" />
+												<String fx:value="tableview" />
+											</styleClass>
+										</TableView>
+									</content>
+								</ScrollPane>
+								<TextField fx:id="teacherShort" layoutX="200.0"
+									layoutY="67.0" minHeight="25.0" minWidth="144.0" prefHeight="25.0"
+									prefWidth="144.0" styleClass="textfield" AnchorPane.leftAnchor="200.0"
+									AnchorPane.topAnchor="67.0" />
+								<TextField fx:id="teacherLastN" layoutX="200.0"
+									layoutY="122.0" minHeight="25.0" minWidth="144.0" prefHeight="25.0"
+									prefWidth="144.0" styleClass="textfield" AnchorPane.leftAnchor="200.0" />
+								<TextField fx:id="teacherFirstN" layoutX="200.0"
+									layoutY="177.0" minHeight="25.0" minWidth="144.0" prefHeight="25.0"
+									prefWidth="144.0" styleClass="textfield" AnchorPane.leftAnchor="200.0" />
+								<TextField fx:id="teacherHours" layoutX="200.0"
+									layoutY="232.0" minHeight="25.0" minWidth="144.0" prefHeight="25.0"
+									prefWidth="144.0" styleClass="textfield" AnchorPane.leftAnchor="200.0" />
+								<TextField fx:id="teacherMinusHours" layoutX="200.0"
+									layoutY="286.0" minHeight="25.0" minWidth="144.0" prefHeight="25.0"
+									prefWidth="144.0" styleClass="textfield" AnchorPane.leftAnchor="200.0" />
+								<CheckComboBox fx:id="teacherSubjectChoice"
+									layoutX="160.0" layoutY="339.0" maxHeight="50.0" maxWidth="145.0"
+									AnchorPane.leftAnchor="200.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</CheckComboBox>
+								<ComboBox fx:id="teacherYearForMeeting" layoutX="200.0"
+									layoutY="394.0" minHeight="27.0" minWidth="144.0" prefHeight="30.0"
+									prefWidth="144.0" promptText="Jahrgang" AnchorPane.leftAnchor="200.0" />
+								<Label layoutX="35.0" layoutY="122.0" prefHeight="27.0"
+									prefWidth="102.0" styleClass="item-title" text="Name:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="121.0" />
+								<Label layoutX="33.0" layoutY="183.0" prefHeight="27.0"
+									prefWidth="120.0" styleClass="item-title" text="Vorname:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="176.0" />
+								<Label layoutX="35.0" layoutY="231.0" prefHeight="27.0"
+									prefWidth="128.0" styleClass="item-title" text="Stunden:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="231.0" />
+								<Button layoutX="14.0" layoutY="450.0" mnemonicParsing="false"
+									onAction="#btnNewTeacher" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Hinzufügen" AnchorPane.leftAnchor="14.0"
+									AnchorPane.topAnchor="470.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="128.0" layoutY="450.0" mnemonicParsing="false"
+									onAction="#btnEditTeacher" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Bearbeiten" AnchorPane.leftAnchor="134.0"
+									AnchorPane.topAnchor="470.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="244.0" layoutY="450.0" mnemonicParsing="false"
+									onAction="#btnDeleteTeacher" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Entfernen" AnchorPane.leftAnchor="254.0"
+									AnchorPane.topAnchor="470.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Label layoutX="35.0" layoutY="66.0" prefHeight="27.0"
+									prefWidth="112.0" styleClass="item-title" text="Kürzel:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="66.0" />
+								<Label layoutX="31.0" layoutY="287.0" prefHeight="27.0"
+									prefWidth="131.0" styleClass="item-title" text="Minusstunden:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="286.0" />
+								<Label layoutX="35.0" layoutY="339.0" prefHeight="25.0"
+									prefWidth="93.0" styleClass="item-title" text="Fächer*:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="341.0" />
+								<Label layoutX="45.0" layoutY="351.0" prefHeight="25.0"
+									prefWidth="160.0" styleClass="item-title" text="In Jahrgangs-Team*:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="396.0" />
+								<Label text="*optional" AnchorPane.leftAnchor="281.0"
+									AnchorPane.topAnchor="524.0" />
+							</children>
+							<styleClass>
+								<String fx:value="anchor-pane" />
+								<String fx:value="background" />
+							</styleClass>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab closable="false" text="Päd. MitarbeiterInnen">
+					<content>
+						<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+							minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+							prefWidth="1014.0">
+							<children>
+								<ScrollPane layoutX="420.0" layoutY="49.0" maxHeight="500.0"
+									maxWidth="600.0" minHeight="500.0" minWidth="600.0" prefHeight="500.0"
+									prefViewportHeight="550.0" prefViewportWidth="410.0" prefWidth="600.0"
+									styleClass="border" AnchorPane.bottomAnchor="150.0"
+									AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="40.0"
+									AnchorPane.topAnchor="50.0">
+									<content>
+										<TableView fx:id="eeTable" layoutX="399.0" layoutY="30.0"
+											minHeight="700.0" minWidth="585.0" prefHeight="700.0"
+											prefWidth="585.0">
+											<columns>
+												<TableColumn fx:id="eeShortColumn" editable="false"
+													maxWidth="120.0" minWidth="100.0" prefWidth="100.0"
+													sortable="false" text="Kürzel" />
+												<TableColumn fx:id="eeLNameColumn" editable="false"
+													maxWidth="300.0" minWidth="100.0" prefWidth="130.0"
+													sortable="false" text="Name" />
+												<TableColumn fx:id="eeFNameColumn" editable="false"
+													maxWidth="250.0" minWidth="50.0" prefWidth="130.0"
+													sortable="false" text="Vorname" />
+												<TableColumn fx:id="eeHoursColumn" editable="false"
+													maxWidth="115.0" minWidth="115.0" prefWidth="115.0"
+													resizable="false" sortable="false" text="Stunden" />
+												<TableColumn fx:id="eeMinusHoursColumn"
+													editable="false" maxWidth="120.0" minWidth="120.0"
+													prefWidth="120.0" resizable="false" sortable="false" text="Minusstunden" />
+											</columns>
+											<styleClass>
+												<String fx:value="border" />
+												<String fx:value="tableview" />
+											</styleClass>
+										</TableView>
+									</content>
+								</ScrollPane>
+								<TextField fx:id="eeShort" layoutX="200.0" layoutY="67.0"
+									minHeight="25.0" minWidth="144.0" prefHeight="25.0" prefWidth="144.0"
+									styleClass="textfield" AnchorPane.leftAnchor="200.0"
+									AnchorPane.topAnchor="67.0" />
+								<TextField fx:id="eeLastN" layoutX="200.0" layoutY="122.0"
+									minHeight="25.0" minWidth="144.0" prefHeight="25.0" prefWidth="144.0"
+									styleClass="textfield" AnchorPane.leftAnchor="200.0" />
+								<TextField fx:id="eeFirstN" layoutX="200.0" layoutY="177.0"
+									minHeight="25.0" minWidth="144.0" prefHeight="25.0" prefWidth="144.0"
+									styleClass="textfield" AnchorPane.leftAnchor="200.0" />
+								<TextField fx:id="eeHours" layoutX="200.0" layoutY="231.0"
+									minHeight="25.0" minWidth="144.0" prefHeight="25.0" prefWidth="144.0"
+									styleClass="textfield" AnchorPane.leftAnchor="200.0" />
+								<TextField fx:id="eeMinusHours" layoutX="200.0"
+									layoutY="288.0" minHeight="25.0" minWidth="144.0" prefHeight="25.0"
+									prefWidth="144.0" styleClass="textfield" AnchorPane.leftAnchor="200.0" />
+								<CheckComboBox fx:id="eeSubjectChoiceCC" layoutX="199.0"
+									layoutY="286.0" maxHeight="50.0" maxWidth="145.0"
+									AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="341.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</CheckComboBox>
+								<Label layoutX="35.0" layoutY="122.0" prefHeight="27.0"
+									prefWidth="108.0" styleClass="item-title" text="Name:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="121.0" />
+								<Label layoutX="33.0" layoutY="183.0" prefHeight="27.0"
+									prefWidth="134.0" styleClass="item-title" text="Vorname:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="176.0" />
+								<Label layoutX="35.0" layoutY="238.0" prefHeight="25.0"
+									prefWidth="93.0" styleClass="item-title" text="Stunden:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="231.0" />
+								<Button layoutX="14.0" layoutY="450.0" mnemonicParsing="false"
+									onAction="#btnNewEducEmployee" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Hinzufügen" AnchorPane.leftAnchor="14.0"
+									AnchorPane.topAnchor="450.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="128.0" layoutY="450.0" mnemonicParsing="false"
+									onAction="#btnEditEducEmployee" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Bearbeiten" AnchorPane.leftAnchor="134.0"
+									AnchorPane.topAnchor="450.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="244.0" layoutY="450.0" mnemonicParsing="false"
+									onAction="#btnDeleteEducEmployee" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Entfernen" AnchorPane.leftAnchor="254.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Label layoutX="35.0" layoutY="66.0" prefHeight="27.0"
+									prefWidth="110.0" styleClass="item-title" text="Kürzel:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="66.0" />
+								<Label layoutX="35.0" layoutY="288.0" prefHeight="25.0"
+									prefWidth="93.0" styleClass="item-title" text="Fächer*:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="341.0" />
+								<Label layoutX="37.0" layoutY="287.0" prefHeight="27.0"
+									prefWidth="131.0" styleClass="item-title" text="Minusstunden:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="286.0" />
+							</children>
+							<styleClass>
+								<String fx:value="anchor-pane" />
+								<String fx:value="background" />
+							</styleClass>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab closable="false" text="Jahrgänge">
+					<content>
+						<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+							minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+							prefWidth="1014.0">
+							<children>
+								<ScrollPane layoutX="420.0" layoutY="49.0" maxHeight="500.0"
+									maxWidth="600.0" minHeight="500.0" minWidth="600.0" prefHeight="500.0"
+									prefViewportHeight="550.0" prefViewportWidth="410.0" prefWidth="600.0"
+									styleClass="border" AnchorPane.bottomAnchor="150.0"
+									AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="40.0"
+									AnchorPane.topAnchor="50.0">
+									<content>
+										<TableView fx:id="yearTable" layoutX="399.0"
+											layoutY="30.0" minHeight="700.0" minWidth="585.0" prefHeight="700.0"
+											prefWidth="585.0">
+											<columns>
+												<TableColumn fx:id="yearSubjectColumn" editable="false"
+													maxWidth="295.0" minWidth="150.0" prefWidth="295.0"
+													sortable="false" text="Fach" />
+												<TableColumn fx:id="yearSubjectHoursColumn"
+													editable="false" maxWidth="338.0" minWidth="150.0"
+													prefWidth="300.0" sortable="false" text="Stunden" />
+											</columns>
+											<styleClass>
+												<String fx:value="border" />
+												<String fx:value="tableview" />
+											</styleClass>
+										</TableView>
+									</content>
+								</ScrollPane>
+								<ComboBox fx:id="year" layoutX="200.0" layoutY="172.0"
+									minHeight="27.0" minWidth="144.0" onAction="#cbYearChoise"
+									prefHeight="27.0" prefWidth="144.0" promptText="1"
+									AnchorPane.leftAnchor="200.0" />
+								<TextField fx:id="yearSubject" editable="false"
+									layoutX="200.0" layoutY="232.0" minHeight="25.0" minWidth="144.0"
+									prefHeight="25.0" prefWidth="144.0" styleClass="textfield"
+									AnchorPane.leftAnchor="200.0">
+									<cursor>
+										<Cursor fx:constant="DEFAULT" />
+									</cursor>
+								</TextField>
+								<TextField fx:id="yearSubjectHours" layoutX="200.0"
+									layoutY="286.0" minHeight="25.0" minWidth="144.0" prefHeight="25.0"
+									prefWidth="144.0" styleClass="textfield" AnchorPane.leftAnchor="200.0">
+									<cursor>
+										<Cursor fx:constant="DEFAULT" />
+									</cursor>
+								</TextField>
+								<Button layoutX="222.0" layoutY="357.0" mnemonicParsing="false"
+									onAction="#btnDeleteYear" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Entfernen" AnchorPane.leftAnchor="222.0"
+									AnchorPane.topAnchor="357.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="64.0" layoutY="357.0" mnemonicParsing="false"
+									onAction="#btnEditYear" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Bearbeiten" AnchorPane.leftAnchor="64.0"
+									AnchorPane.topAnchor="357.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Label layoutX="35.0" layoutY="107.0" prefHeight="21.0"
+									prefWidth="116.0" styleClass="item-title" text="Jahrgang:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="176.0" />
+								<Label layoutX="35.0" layoutY="178.0" prefHeight="27.0"
+									prefWidth="198.0" styleClass="item-title" text="Ausgewähltes Fach:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="231.0" />
+								<Label layoutX="30.0" layoutY="165.0" prefHeight="21.0"
+									prefWidth="116.0" styleClass="item-title" text="Stunden:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="288.0" />
+							</children>
+							<styleClass>
+								<String fx:value="anchor-pane" />
+								<String fx:value="background" />
+							</styleClass>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab closable="false" text="Klassen">
+					<content>
+						<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+							minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+							prefWidth="1018.0">
+							<children>
+								<ScrollPane layoutX="420.0" layoutY="49.0" maxHeight="175.0"
+									maxWidth="600.0" minHeight="175.0" minWidth="600.0" prefHeight="175.0"
+									prefViewportHeight="550.0" prefViewportWidth="410.0" prefWidth="600.0"
+									styleClass="border" AnchorPane.leftAnchor="370.0"
+									AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="66.0">
+									<content>
+										<TableView fx:id="classTable" onMouseClicked="#tableClear" layoutX="339.0"
+											layoutY="43.0" prefHeight="500.0" prefWidth="585.0">
+											<columns>
+												<TableColumn fx:id="classTitleColumn" editable="false"
+													minWidth="300.0" prefWidth="300.0" resizable="false"
+													sortable="false" text="Bezeichnung" />
+												<TableColumn fx:id="classYearColumn" editable="false"
+													maxWidth="300.0" minWidth="300.0" prefWidth="300.0"
+													resizable="false" sortable="false" text="Jahrgang" />
+											</columns>
+											<styleClass>
+												<String fx:value="border" />
+												<String fx:value="tableview" />
+											</styleClass>
+										</TableView>
+									</content>
+								</ScrollPane>
+								<Label layoutX="35.0" layoutY="138.0" prefHeight="21.0"
+									prefWidth="127.0" styleClass="item-title" text="Bezeichnung:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="140.0" />
+								<TextField fx:id="classTitle" layoutX="205.0" layoutY="135.0"
+									prefHeight="25.0" prefWidth="144.0" styleClass="textfield"
+									AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="140.0" />
+								<ComboBox fx:id="classYear" layoutX="206.0" layoutY="78.0"
+									minHeight="27.0" prefWidth="144.0" AnchorPane.leftAnchor="200.0" />
+								<ComboBox fx:id="classRoom" layoutX="205.0" layoutY="198.0"
+									minHeight="27.0" prefWidth="144.0" promptText="Klassenräume"
+									AnchorPane.leftAnchor="200.0" />
+								<TextField fx:id="classSubject" layoutX="203.0"
+									layoutY="308.0" prefHeight="25.0" prefWidth="144.0" styleClass="textfield"
+									AnchorPane.leftAnchor="200.0">
+									<cursor>
+										<Cursor fx:constant="DEFAULT" />
+									</cursor>
+								</TextField>
+								<TextField fx:id="classHours" layoutX="203.0" layoutY="376.0"
+									prefHeight="25.0" prefWidth="144.0" styleClass="textfield"
+									AnchorPane.leftAnchor="200.0">
+									<cursor>
+										<Cursor fx:constant="DEFAULT" />
+									</cursor>
+								</TextField>
+								<Button fx:id="btnClass" layoutX="30.0" layoutY="469.0" mnemonicParsing="false"
+									onAction="#btnNewClass" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Hinzufügen" AnchorPane.leftAnchor="14.0"
+									AnchorPane.topAnchor="500.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="146.0" layoutY="469.0" mnemonicParsing="false"
+									onAction="#btnEditClass" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Bearbeiten" AnchorPane.leftAnchor="134.0"
+									AnchorPane.topAnchor="500.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="262.0" layoutY="469.0" mnemonicParsing="false"
+									onAction="#btnDeleteClass" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Entfernen" AnchorPane.leftAnchor="254.0"
+									AnchorPane.topAnchor="500.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Label layoutX="35.0" layoutY="78.0" prefHeight="21.0"
+									prefWidth="116.0" styleClass="item-title" text="Jahrgang:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="80.0" />
+								<ScrollPane layoutX="370.0" layoutY="275.0"
+									maxHeight="175.0" maxWidth="600.0" minHeight="175.0" minWidth="600.0"
+									prefHeight="175.0" prefViewportHeight="337.0"
+									prefViewportWidth="248.0" prefWidth="600.0" styleClass="border"
+									AnchorPane.bottomAnchor="255.0" AnchorPane.leftAnchor="370.0"
+									AnchorPane.rightAnchor="40.0">
+									<content>
+										<TableView fx:id="classSubjectTable" layoutX="339.0"
+											layoutY="43.0" prefHeight="700.0" prefWidth="585.0">
+											<columns>
+												<TableColumn fx:id="classSubjectColumn"
+													editable="false" maxWidth="300.0" minWidth="127.0"
+													prefWidth="208.0" resizable="false" sortable="false" text="Bezeichnung" />
+												<TableColumn fx:id="classSubjectDurationColumn"
+													editable="false" maxWidth="416.0" minWidth="0.0" prefWidth="179.0"
+													resizable="false" sortable="false" text="Soll-Stunden" />
+												<TableColumn fx:id="classSubjectPlanedHours"
+													minWidth="100.0" prefWidth="197.0" text="Ist-Stunden" />
+											</columns>
+											<styleClass>
+												<String fx:value="border" />
+												<String fx:value="tableview" />
+											</styleClass>
+										</TableView>
+									</content>
+								</ScrollPane>
+								<Label layoutX="31.0" layoutY="310.0" prefHeight="21.0"
+									prefWidth="156.0" styleClass="item-title" text="Ausgewähltes Fach:"
+									AnchorPane.leftAnchor="35.0" />
+								<Label layoutX="31.0" layoutY="378.0" prefHeight="21.0"
+									prefWidth="116.0" styleClass="item-title" text="Stunden:"
+									AnchorPane.leftAnchor="35.0" />
+								<Text layoutX="35.0" layoutY="273.0" strokeType="OUTSIDE"
+									strokeWidth="0.0" styleClass="fancytext" text="Fächer individuell anpassen:"
+									AnchorPane.leftAnchor="35.0">
+									<font>
+										<Font name="Segoe UI Symbol" size="14.0" />
+									</font>
+								</Text>
+								<Label layoutX="35.0" layoutY="186.0" prefHeight="21.0"
+									prefWidth="137.0" styleClass="item-title" text="Klassenraum:"
+									AnchorPane.topAnchor="200.0" />
+							</children>
+							<styleClass>
+								<String fx:value="anchor-pane" />
+								<String fx:value="background" />
+							</styleClass>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab closable="false" text="Schwimmunterricht">
+					<content>
+						<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+							minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+							prefWidth="1014.0">
+							<children>
+								<ScrollPane layoutX="420.0" layoutY="49.0" maxHeight="500.0"
+									maxWidth="600.0" minHeight="500.0" minWidth="600.0" prefHeight="500.0"
+									prefViewportHeight="550.0" prefViewportWidth="410.0" prefWidth="600.0"
+									styleClass="border" AnchorPane.bottomAnchor="150.0"
+									AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="40.0"
+									AnchorPane.topAnchor="50.0">
+									<content>
+										<TableView fx:id="swimLessonTable" layoutX="399.0"
+											layoutY="30.0" minHeight="700.0" minWidth="585.0" prefHeight="700.0"
+											prefWidth="585.0">
+											<columns>
+												<TableColumn fx:id="swimLessonClassesColumn"
+													editable="false" maxWidth="300.0" minWidth="150.0"
+													prefWidth="200.0" sortable="false" text="Klasse" />
+												<TableColumn fx:id="swimLesssonBeginColumn"
+													editable="false" maxWidth="300.0" minWidth="150.0"
+													prefWidth="200.0" sortable="false" text="Startzeit" />
+												<TableColumn fx:id="swimLesssonDurationColumn"
+													maxWidth="300.0" minWidth="150.0" prefWidth="200.0" text="Dauer" />
+											</columns>
+											<styleClass>
+												<String fx:value="border" />
+												<String fx:value="tableview" />
+											</styleClass>
+										</TableView>
+									</content>
+								</ScrollPane>
+								<Button mnemonicParsing="false" onAction="#btnNewSwimLesson"
+									prefHeight="30.0" prefWidth="100.0" styleClass="border" text="Hinzufügen"
+									AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="450.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="233.0" layoutY="450.0" mnemonicParsing="false"
+									onAction="#btnDeleteSwimLesson" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Entfernen" AnchorPane.leftAnchor="254.0"
+									AnchorPane.topAnchor="450.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Button layoutX="93.0" layoutY="450.0" mnemonicParsing="false"
+									onAction="#btnEditSwimLesson" prefHeight="30.0" prefWidth="100.0"
+									styleClass="border" text="Bearbeiten" AnchorPane.leftAnchor="134.0"
+									AnchorPane.topAnchor="450.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Button>
+								<Label layoutX="35.0" layoutY="107.0" prefHeight="21.0"
+									prefWidth="116.0" styleClass="item-title" text="Klasse:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="122.0" />
+								<Label layoutX="35.0" layoutY="178.0" prefHeight="27.0"
+									prefWidth="198.0" styleClass="item-title" text="Tag:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="177.0" />
+								<Label layoutX="30.0" layoutY="165.0" prefHeight="21.0"
+									prefWidth="116.0" styleClass="item-title" text="Startzeit:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="248.0" />
+								<CheckComboBox fx:id="swimLessonClass" layoutX="202.0"
+									layoutY="118.0" maxHeight="50.0" maxWidth="145.0"
+									AnchorPane.leftAnchor="200.0" />
+								<ComboBox fx:id="swimLessonDay" layoutX="200.0"
+									layoutY="176.0" minHeight="27.0" minWidth="144.0" prefHeight="30.0"
+									prefWidth="144.0" promptText="Tage" AnchorPane.leftAnchor="200.0" />
+								<TextField fx:id="swimLessonBeginHour" layoutX="197.0"
+									layoutY="238.0" minHeight="25.0" minWidth="60.0" prefHeight="25.0"
+									prefWidth="60.0" styleClass="textfield" AnchorPane.leftAnchor="200.0"
+									AnchorPane.topAnchor="248.0">
+									<cursor>
+										<Cursor fx:constant="DEFAULT" />
+									</cursor>
+								</TextField>
+								<TextField fx:id="swimLessonBeginMinutes" layoutX="283.0"
+									layoutY="238.0" minHeight="25.0" minWidth="60.0" prefHeight="25.0"
+									prefWidth="60.0" styleClass="textfield" AnchorPane.topAnchor="248.0">
+									<cursor>
+										<Cursor fx:constant="DEFAULT" />
+									</cursor>
+								</TextField>
+								<TextField fx:id="swimLessonDuration" layoutX="200.0"
+									layoutY="301.0" minHeight="25.0" minWidth="144.0" prefHeight="25.0"
+									prefWidth="144.0" styleClass="textfield">
+									<cursor>
+										<Cursor fx:constant="DEFAULT" />
+									</cursor>
+								</TextField>
+								<Label layoutX="35.0" layoutY="298.0" prefHeight="21.0"
+									prefWidth="116.0" styleClass="item-title" text="Dauer:"
+									AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="303.0" />
+								<Label layoutX="270.0" layoutY="253.0" text=":"
+									AnchorPane.topAnchor="253.0" />
+							</children>
+							<styleClass>
+								<String fx:value="anchor-pane" />
+								<String fx:value="background" />
+							</styleClass>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab closable="false" text="Übersicht">
+					<content>
+						<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+							minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+							prefWidth="1014.0" styleClass="background">
+							<children>
+								<TabPane layoutX="372.0" layoutY="48.0" maxHeight="500.0"
+									maxWidth="600.0" minHeight="500.0" minWidth="600.0"
+									pickOnBounds="false" prefHeight="500.0" prefWidth="600.0"
+									style="-fx-border-image-width: 1; -fx-border-color: rgb(0.0, 130.0, 135.0);"
+									AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="370.0"
+									AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="50.0">
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+									<tabs>
+										<Tab fx:id="classes" closable="false" text="       Klassen       ">
+											<content>
+												<ScrollPane prefHeight="329.0"
+													prefViewportHeight="399.0" prefViewportWidth="420.0"
+													prefWidth="459.0"
+													style="-fx-border-image-width: 1; -fx-border-color: #75C99E;; -fx-border-style: segments(1.0, 1.0); -fx-background-insets: 0.0 0.0 0.0 0.0, 0.0, 1.0, 2.0;">
+													<content>
+														<TableView fx:id="overviewclassTable"
+															prefHeight="700.0" prefWidth="575.0">
+															<columns>
+																<TableColumn fx:id="overviewClassTitleColumn"
+																	editable="false" maxWidth="400.0" minWidth="200.0"
+																	prefWidth="300.0" resizable="false" sortable="false"
+																	text="Bezeichnung" />
+																<TableColumn fx:id="overviewYearTitleColumn"
+																	editable="false" maxWidth="400.0" minWidth="200.0"
+																	prefWidth="300.0" resizable="false" sortable="false"
+																	text="Jahrgang" />
+															</columns>
+														</TableView>
+													</content>
+												</ScrollPane>
+											</content>
+										</Tab>
+										<Tab fx:id="teachers" closable="false" text="LehrerInnen">
+											<content>
+												<ScrollPane prefHeight="390.0"
+													prefViewportHeight="399.0" prefViewportWidth="420.0"
+													prefWidth="554.0"
+													style="-fx-border-image-width: 1; -fx-border-color: #75C99E; -fx-border-style: segments(1.0, 1.0);">
+													<content>
+														<TableView fx:id="overviewteacherTable"
+															prefHeight="557.0" prefWidth="575.0">
+															<columns>
+																<TableColumn fx:id="overviewteacherShortColumn"
+																	editable="false" maxWidth="150.0" minWidth="80.0"
+																	prefWidth="100.0" resizable="false" sortable="false"
+																	text="Kürzel" />
+																<TableColumn fx:id="overviewteacherLNameColumn"
+																	editable="false" maxWidth="200.0" minWidth="100.0"
+																	prefWidth="150.0" sortable="false" text="Name" />
+																<TableColumn fx:id="overviewteacherFNameColumn"
+																	editable="false" maxWidth="200.0" prefWidth="130.0"
+																	resizable="false" sortable="false" text="Vorname" />
+																<TableColumn fx:id="overviewteacherMaxWorkloadColumn"
+																	editable="false" maxWidth="150.0" minWidth="80.0"
+																	prefWidth="100.0" sortable="false" text="Soll-Stunden" />
+																<TableColumn fx:id="overviewteacherMinusHoursColumn"
+																	editable="false" maxWidth="150.0" minWidth="80.0"
+																	prefWidth="105.0" resizable="false" sortable="false"
+																	text="Minusstunden" />
+															</columns>
+															<cursor>
+																<Cursor fx:constant="HAND" />
+															</cursor>
+														</TableView>
+													</content>
+												</ScrollPane>
+											</content>
+										</Tab>
+										<Tab fx:id="eemployee" closable="false" text="Päd. MitarbeiterInnen">
+											<content>
+												<ScrollPane prefHeight="390.0"
+													prefViewportHeight="399.0" prefViewportWidth="420.0"
+													prefWidth="554.0"
+													style="-fx-border-image-width: 1; -fx-border-color: #75C99E; -fx-border-style: segments(1.0, 1.0);">
+													<content>
+														<TableView fx:id="overviewEETable" prefHeight="557.0"
+															prefWidth="575.0">
+															<columns>
+																<TableColumn fx:id="overvieweeShortColumn"
+																	editable="false" maxWidth="150.0" minWidth="80.0"
+																	prefWidth="100.0" sortable="false" text="Kürzel" />
+																<TableColumn fx:id="overvieweeLNameColumn"
+																	editable="false" maxWidth="200.0" minWidth="100.0"
+																	prefWidth="150.0" sortable="false" text="Name" />
+																<TableColumn fx:id="overvieweeFNameColumn"
+																	editable="false" maxWidth="200.0" prefWidth="130.0"
+																	sortable="false" text="Vorname" />
+																<TableColumn fx:id="overvieweeMaxWorkloadColumn"
+																	editable="false" maxWidth="206.0" minWidth="80.0"
+																	prefWidth="206.0" sortable="false" text="Stunden" />
+															</columns>
+															<cursor>
+																<Cursor fx:constant="HAND" />
+															</cursor>
+														</TableView>
+													</content>
+												</ScrollPane>
+											</content>
+										</Tab>
+										<Tab fx:id="rooms" closable="false" text="       Räume       ">
+											<content>
+												<ScrollPane prefHeight="390.0"
+													prefViewportHeight="399.0" prefViewportWidth="420.0"
+													prefWidth="554.0"
+													style="-fx-border-image-width: 1; -fx-border-color: #75C99E; -fx-border-style: segments(1.0, 1.0);">
+													<content>
+														<TableView fx:id="overviewRoomTable" prefHeight="557.0"
+															prefWidth="575.0">
+															<columns>
+																<TableColumn fx:id="overviewRoomNumberColumn"
+																	editable="false" maxWidth="150.0" minWidth="80.0"
+																	prefWidth="100.0" resizable="false" sortable="false"
+																	text="Nummer" />
+																<TableColumn fx:id="overviewRoomTitleColumn"
+																	editable="false" maxWidth="200.0" minWidth="100.0"
+																	prefWidth="150.0" sortable="false" text="Bezeichnung" />
+																<TableColumn fx:id="overviewRoomBuildingColumn"
+																	editable="false" maxWidth="200.0" prefWidth="160.0"
+																	resizable="false" sortable="false" text="Standort" />
+																<TableColumn fx:id="overviewRoomFunctionColumn"
+																	editable="false" maxWidth="197.0" minWidth="80.0"
+																	prefWidth="175.0" sortable="false" text="Funktion" />
+															</columns>
+															<cursor>
+																<Cursor fx:constant="HAND" />
+															</cursor>
+														</TableView>
+													</content>
+												</ScrollPane>
+											</content>
+										</Tab>
+									</tabs>
+									<styleClass>
+										<String fx:value="border" />
+										<String fx:value="border-pane" />
+									</styleClass>
+								</TabPane>
+								<Button layoutX="200.0" layoutY="131.0" maxWidth="116.0"
+									minHeight="30.0" minWidth="116.0" mnemonicParsing="false"
+									onAction="#btnWishes" stylesheets="@StyleSheets/Main.css" text=" Auswahl laden"
+									AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="131.0">
+									<styleClass>
+										<String fx:value="border" />
+										<String fx:value="dark-blue" />
+									</styleClass>
+									<font>
+										<Font name="Helsinki XXL Thin" size="12.0" />
+									</font>
+								</Button>
+								<Label layoutX="14.0" layoutY="195.0" prefHeight="36.0"
+									prefWidth="179.0" styleClass="item-title" text="Personaleinsatzplan:"
+									AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="193.0" />
+								<Button layoutX="200.0" layoutY="196.0" minHeight="30.0"
+									minWidth="116.0" mnemonicParsing="false" onAction="#btnTeacherSubject"
+									styleClass="border" text="Laden" AnchorPane.leftAnchor="200.0"
+									AnchorPane.topAnchor="196.0" />
+								<Label layoutX="14.0" layoutY="265.0" prefHeight="36.0"
+									prefWidth="203.0" styleClass="item-title" text="Ausgewählter Plan:"
+									AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="257.0" />
+								<Button layoutX="200.0" layoutY="260.0" maxWidth="116.0"
+									minHeight="30.0" minWidth="116.0" mnemonicParsing="false"
+									onAction="#btnTable" prefWidth="116.0" stylesheets="@StyleSheets/Main.css"
+									text="Laden" AnchorPane.leftAnchor="200.0"
+									AnchorPane.topAnchor="260.0">
+									<font>
+										<Font name="Helsinki XXL Thin" size="12.0" />
+									</font>
+									<styleClass>
+										<String fx:value="border" />
+										<String fx:value="dark-blue" />
+									</styleClass>
+								</Button>
+								<Label layoutX="14.0" layoutY="125.0" prefHeight="36.0"
+									prefWidth="162.0" styleClass="item-title" text="Lehrerwünsche*:"
+									AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="128.0" />
+								<Label layoutX="14.0" layoutY="335.0" prefHeight="36.0"
+									prefWidth="149.0" styleClass="item-title" text="Wochentagplan:"
+									AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="317.0" />
+								<Button layoutX="200.0" layoutY="320.0" maxWidth="116.0"
+									minHeight="30.0" minWidth="116.0" mnemonicParsing="false"
+									onAction="#btnDayTable" prefWidth="116.0" stylesheets="@StyleSheets/Main.css"
+									text="Laden" AnchorPane.leftAnchor="200.0"
+									AnchorPane.topAnchor="320.0">
+									<font>
+										<Font name="Helsinki XXL Thin" size="12.0" />
+									</font>
+									<styleClass>
+										<String fx:value="border" />
+										<String fx:value="dark-blue" />
+									</styleClass>
+								</Button>
+								<Label layoutX="14.0" layoutY="405.0" prefHeight="36.0"
+									prefWidth="149.0" styleClass="item-title" text="PDF-Viewer:"
+									AnchorPane.topAnchor="377.0" />
+								<Button layoutX="200.0" layoutY="380.0" maxWidth="116.0"
+									minHeight="30.0" minWidth="116.0" mnemonicParsing="false"
+									onAction="#btnPDFViewer" prefWidth="116.0" stylesheets="@StyleSheets/Main.css"
+									text="Öffnen" AnchorPane.leftAnchor="200.0"
+									AnchorPane.topAnchor="380.0">
+									<font>
+										<Font name="Helsinki XXL Thin" size="12.0" />
+									</font>
+									<styleClass>
+										<String fx:value="border" />
+										<String fx:value="dark-blue" />
+									</styleClass>
+								</Button>
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+			</tabs>
+			<BorderPane.margin>
+				<Insets />
+			</BorderPane.margin>
+		</TabPane>
+	</bottom>
+	<top>
+		<MenuBar
+			style="-fx-background-color: #FDF8FF; -fx-border-color: transparent;"
+			BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" styleClass="data-Icon" text="Datei">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#mNewProject"
+							styleClass="data-Icon" text="    Neues Projekt" />
+						<MenuItem mnemonicParsing="false" onAction="#mOpen"
+							styleClass="open-Icon" text="    Öffnen" />
+						<MenuItem mnemonicParsing="false" onAction="#mSave"
+							styleClass="save-Icon" text="    Speichern  " />
+						<MenuItem mnemonicParsing="false" onAction="#mSaveAs"
+							styleClass="Osave-Icon" text="    Speichern unter..." />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Bearbeiten">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#mRedo"
+							styleClass="forv-Icon" text="    Wiederherstellen" />
+						<MenuItem mnemonicParsing="false" onAction="#mUndo"
+							styleClass="back-Icon" text="    Rückgängig" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Sonstiges">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#mBackup"
+							styleClass="bforv-Icon" text="    Wiederherstellen..." />
+						<MenuItem mnemonicParsing="false" onAction="#mDefaultMenu"
+							styleClass="stand-Icon" text="    Standardeinstellungen" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Hilfe">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#mHelp"
+							styleClass="help-Icon" text="    Handbuch  " />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<center>
+		<GridPane BorderPane.alignment="TOP_LEFT">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+					prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+					prefWidth="100.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="50.0" prefHeight="50.0"
+					vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Text strokeType="OUTSIDE" strokeWidth="0.0"
+					text="Legen Sie bitte ihre Haupteinstellungen fest." wrappingWidth="410.82421875"
+					GridPane.rowIndex="1" />
+				<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hauptmenü"
+					wrappingWidth="176.28125">
+					<font>
+						<Font size="32.0" />
+					</font>
+				</Text>
+			</children>
+			<BorderPane.margin>
+				<Insets left="10.0" />
+			</BorderPane.margin>
+		</GridPane>
+	</center>
+</BorderPane>

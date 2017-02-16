@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="768.0" maxWidth="1024.0" minHeight="768.0"
+	minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" stylesheets="@StyleSheets/Main.css"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="Yellowstone.YellowTable.GUI.WarningViewController">
+	<children>
+		<Label layoutX="14.0" layoutY="14.0" prefHeight="39.0"
+			prefWidth="337.0" text="Warnungen" AnchorPane.leftAnchor="10.0"
+			AnchorPane.topAnchor="10.0">
+			<font>
+				<Font size="32.0" />
+			</font>
+		</Label>
+		<Label layoutX="10.0" layoutY="49.0" prefHeight="27.0"
+			prefWidth="781.0"
+			text="Hier können Sie alle Warnungen einsehen, die während der Planung entstanden sind."
+			AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="62.0" />
+		<Button layoutX="794.0" layoutY="36.0" minHeight="30.0"
+			minWidth="200.0" mnemonicParsing="false" onAction="#btnReturnClassViewTable"
+			prefHeight="30.0" prefWidth="200.0" text="Zur Planung zurückkehren"
+			AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="36.0" />
+		<ScrollPane layoutX="10.0" layoutY="100.0"
+			prefViewportHeight="550.0" prefViewportWidth="990.0"
+			AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0"
+			AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
+			<content>
+				<TableView fx:id="warningTable" layoutX="10.0" layoutY="90.0"
+					minHeight="2000.0" minWidth="2000.0" AnchorPane.leftAnchor="10.0"
+					AnchorPane.topAnchor="100.0">
+					<columns>
+						<TableColumn fx:id="numbers" maxWidth="-1.0" minWidth="250.0"
+							prefWidth="-1.0" text="Warnungsnummer" />
+						<TableColumn fx:id="warning" maxWidth="-1.0" minWidth="800.0"
+							prefWidth="-1.0" text="Warnung" />
+					</columns>
+				</TableView>
+			</content>
+		</ScrollPane>
+	</children>
+</AnchorPane>

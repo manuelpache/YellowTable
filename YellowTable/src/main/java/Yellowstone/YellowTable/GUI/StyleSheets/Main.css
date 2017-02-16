@@ -1,0 +1,613 @@
+
+ .background{
+-fx-background-color: #FDF8FF;
+   
+}
+
+.anchor-pane{
+-fx-background-color: #FDF8FF;
+}
+
+.agenda:focused{
+-fx-focus-color: #75C99E;
+-fx-border-color: #75C99E;
+}
+
+.slider *.thumb{
+-fx-focus-color: #75C99E;
+}
+
+.scroll-pane:focused{
+-fx-focus-color: #75C99E;
+}
+
+.titled-pane:focused > .title{
+-fx-focus-color: #75C99E;
+}
+ 
+.header{
+    -fx-font-size: 42.0pt;
+    -fx-font-family: Helvetica, Arial, sans-serif;
+    -fx-text-fill: black;
+}
+
+.fancytext{
+	-fx-font-size: 13.0pt;
+    -fx-font-family: Helvetica, Arial, sans-serif;
+    -fx-opacity: 0.8;
+}
+ 
+.item-title{
+    -fx-font-size: 11.0pt;
+    -fx-font-family: Helvetica, Arial, sans-serif;
+    -fx-opacity: 0.8;
+      
+}
+
+.menu-bar .menu-item:hover{
+	-fx-background-color: #75C99E;
+	
+}
+
+.combo-box:showing
+{
+-fx-font-size: 9.0pt;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover 
+{
+-fx-background-color: #75C99E;
+
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover 
+{
+
+-fx-background-color: #75C99E;
+
+}
+
+.combo-box{
+	-fx-border-color: #75C99E;
+    -fx-border-width: 1.0;
+    -fx-border-style: segments(1.0, 1.0);
+    -fx-font-size: 9.0pt;
+}
+
+.combo-box-base:focused {
+-fx-focus-color: #75C99E;
+-fx-background-radius: 6.4, 4, 5, 3;
+-fx-background-insets: -1.4, 0, 1, 2;
+-fx-font-size: 9.0pt;
+}
+
+.table-view:focused {
+-fx-focus-color: #75C99E;
+}
+
+.menu-bar .label:pressed {
+    -fx-text-fill: white;
+}
+
+.text-field:focused {
+-fx-focus-color: #75C99E;
+}
+
+
+.menu-bar{
+	-fx-font-size: 12.0pt;
+	-fx-font-family: Helvetica, Arial, sans-serif;
+
+}
+
+.context-menu:pressed{
+	-fx-text-fill: white;
+}
+
+.menu-bar .label{
+	-fx-font-family: Helvetica, Arial, sans-serif;
+	-fx-text-fill: black;
+	-fx-opacity: 0.8;
+}
+
+.menu-bar .menu-item{
+	-fx-text-fill: black;
+}
+
+
+.menu-bar .menu-button:hover, .menu-bar .menu-button:showing {
+	-fx-background-color: #75C99E;
+	-fxtext-fill: black;
+	
+}
+
+.menu-bar:focused{
+	-fx-background-color: #75C99E;
+	-fx-text-fill: black;
+}
+
+
+
+.button {
+	-fx-border-color: #75C99E;
+    -fx-border-width: 1.0;
+    -fx-border-style: segments(1.0, 1.0);
+}
+ 
+ 
+.button:pressed, .button:default:hover:pressed
+{
+  -fx-background-color: #75C99E;
+  -fx-text-fill: white;
+}
+ 
+.button:focused
+{
+    -fx-border-color: #75C99E;
+    -fx-border-width: 1.0;
+    -fx-border-style: segments(1.0, 1.0);
+    -fx-background-insets: 0.0 0.0 0.0 0.0, 0.0, 1.0, 2.0;   
+}
+ 
+.button:disabled, .button:default:disabled
+{
+    -fx-opacity: 1;
+    -fx-background-color: #cccccc;
+    -fx-text-fill: #212121;
+}
+ 
+.button:default
+{
+    -fx-background-color: #75C99E;
+    -fx-text-fill: #ffffff;
+   
+}
+ 
+.button:default:hover{
+    -fx-background-color: #75C99E;
+}
+
+.button {
+	-fx-text-fill: #212121;
+	-fx-font-size: 10.0pt;
+    -fx-font-family: sans-serif;
+}
+ 
+ 
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Radio Button                                                                *
+ *                                                                             *
+ ******************************************************************************/
+ 
+.radio-button 
+{
+    -fx-text-fill: #212121;
+}
+ 
+.radio-button .radio  
+{
+   -fx-background-color: white;
+   -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
+   -fx-background-insets: 0.0;
+    
+   -fx-border-radius: 1.0em;
+   -fx-border-color: #bababa;
+     
+   -fx-padding: 4.0px; /* 4 -- padding from outside edge to the inner black dot */
+}
+ 
+.radio-button:hover .radio 
+{
+    -fx-border-color: #919191;
+}
+
+
+ 
+.radio-button .dot 
+{
+   -fx-background-color: transparent;
+   -fx-background-insets: 0.0;
+   -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
+   -fx-padding: 6.0px; /* 3 -- radius of the inner black dot when selected */
+}
+ 
+.radio-button:selected .dot 
+{
+   -fx-background-color: #75C99E;
+}
+ 
+.radio-button:disabled
+{
+    -fx-opacity: 0.5;
+}
+ 
+.radio-button:disabled .radio
+{
+    -fx-background-color: #e6e6e6;
+    -fx-border-color: #d9d9d9;
+}
+ 
+.radio-button:focused .radio
+{
+   -fx-background-color: white;
+   -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
+   -fx-background-insets: 0.0;
+    
+   -fx-border-style: solid, segments(1.0, 1.0);
+   -fx-border-radius: 1.0em, 0.0;
+   -fx-border-color: #bababa, #75C99E;
+   -fx-border-insets: 0.0px, -2.0px;
+   -fx-border-width: 1.0px, 1.0px;
+     
+   -fx-padding: 4.0px; /* 4 -- padding from outside edge to the inner black dot */  
+}
+ 
+.radio-button:armed .radio {
+    -fx-background-color: #75C99E;
+    -fx-border-color: transparent ;
+}
+ 
+.radio-button:pressed .radio
+{
+    -fx-background-color: #75C99E;
+    -fx-border-color: transparent ;
+}
+ 
+.radio-button:pressed:selected .dot
+{
+    -fx-background-color: white;
+}
+ 
+.text-field {
+    -fx-font-size: 9.0pt;
+}
+.radio-button:armed .dot
+{
+    -fx-background-color: white;
+}
+ 
+.radio-button:focused:armed .radio
+{
+   -fx-background-color: #75C99E;
+   -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
+   -fx-background-insets: 0.0;
+    
+   -fx-border-style: solid;
+   -fx-border-radius: 1.0em, 0.0;
+   -fx-border-color:  #D6D7C8;
+   -fx-border-insets: 0.0px, -2.0px;
+   -fx-border-width: 1.0px, 1.0px;
+     
+   -fx-padding: 4.0px; /* 4 -- padding from outside edge to the inner black dot */  
+}
+
+ 
+.menu-item .label {
+    -fx-padding: 0.0em 0.0em 0.0em 0.0em;
+    -fx-text-fill: #212121;
+    -fx-font-family: Helvetica, Arial, sans-serif;
+   
+}
+
+.menu-item:focused {
+	-fx-background-color: #75C99E;
+}
+ 
+.scroll-bar .thumb{
+    -fx-background-color: #c2c2c2;
+    -fx-background-insets: 0.0;
+    -fx-background-radius: 0.0;
+}
+ 
+.menu-bar .menu-item:pressed .label{
+	-fx-text-fill: white;
+}
+
+
+.scroll-bar .thumb:pressed{
+    -fx-background-color: #75C99E;
+    
+}
+ 
+.scroll-bar .track {
+    -fx-background-color: #D6D7C8;
+    -fx-background-insets: 0.0;
+    -fx-background-radius: 0.0;
+ 
+}
+.scroll-bar .track-background {
+     -fx-background-color: #75C99E;
+  
+}
+ 
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: #75C99E;
+    -fx-background-insets: 0.0;
+    -fx-background-radius: 0.0;
+      
+    -fx-padding: 0.25em; /* 3 */
+}
+ 
+.scroll-bar .increment-button:hover, .scroll-bar .decrement-button:hover  {
+    -fx-background-color: #75C99E;
+
+}
+ 
+.scroll-bar .increment-button:pressed, .scroll-bar .decrement-button:pressed {
+    -fx-background-color: #606060;
+}
+ 
+.scroll-bar:horizontal .increment-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    
+    
+    -fx-shape: "M7.626,12.876L4.251,8.751H7.14L11,12.876L7.14,17H4.251L7.626,12.876z";
+}
+ 
+.scroll-bar:vertical .increment-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+   
+    -fx-shape: "M8.124,13.625l4.125-3.375v2.889l-4.125,3.86L4,13.139V10.25L8.124,13.625z";
+}
+ 
+.scroll-bar .increment-button:pressed .increment-arrow {
+    -fx-background-color: white, white;
+}
+ 
+.scroll-bar:horizontal .decrement-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+
+    -fx-shape: "M11,17H8.111l-3.86-4.124l3.86-4.125H11l-3.375,4.125L11,17z";
+}
+ 
+.scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+
+    -fx-shape: "M4,17v-2.889l4.124-3.86l4.125,3.86V17l-4.125-3.375L4,17z";
+}
+ 
+.scroll-bar .decrement-button:pressed .decrement-arrow {
+    -fx-background-color: white, white;
+}
+ 
+.scroll-bar:disabled {
+    -fx-opacity: 0.4;
+}
+ 
+ 
+/*******************************************************************************
+ *                                                                             *
+ * ScrollPane                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+ 
+
+
+.scroll-pane.border {
+	-fx-border-color: #75C99E;
+    -fx-border-width: 1.0;
+    -fx-border-style: segments(1.0, 1.0);
+    -fx-background-insets: 0.0 0.0 0.0 0.0, 0.0, 1.0, 2.0;
+}
+ 
+ 
+.anchor-pane{
+	
+}
+
+.tableview.border.this{
+	-fx-border-color: #75C99E;
+    -fx-border-width: 1.0 1.0 1.0 1.0; 
+}
+
+
+
+.textfield:focused
+{
+    -fx-border-color: #75C99E;
+    -fx-border-width: 1.0;
+    -fx-border-style: segments(1.0, 1.0);
+    -fx-background-insets: 0.0 0.0 0.0 0.0, 0.0, 1.0, 2.0; 
+    -fx-font-size: 9.0pt;
+    }
+    
+ 
+
+/*******************************************************************************
+ *                                                                             *
+ * TabPane                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0.0;
+}
+
+ 
+.tab-pane .tab{
+	
+	-fx-padding: 1.0 14.0 1.0 14.0;
+    -fx-background-radius: 0.0;
+    -fx-background-color: #D6D7C8;
+    -fx-border-style: null;
+    
+	-fx-font-family: Helvetica, Arial, sans-serif;  
+    -fx-font-size: 10.0pt;
+    -fx-text-fill: black;
+}
+    
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-width: 1.0, 1.0;
+    -fx-border-color: transparent;
+    -fx-border-insets: -4.0 -4.0 -6.0 -5.0, -2.0 -2.0 -5.0 -3.0;
+    -fx-border-radius: 2.0, 1.0; /* looks sharper if outer border has a tighter radius (2 instead of 3) */
+}
+
+.tab-pane .tab:selected
+{	
+	-fx-border-color: transparent ;
+	-fx-effect: null;
+  	-fx-background-color: #75C99E;
+  	-fx-text-fill: white;
+}
+
+.tab:selected .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: white ;
+}
+
+.tab-content-area {
+	-fx-padding: -1.5 5.0 2.0 5.0;
+}
+
+.tab-pane .tab:pressed, .tab:default:hover:pressed
+{
+	-fx-effect: null;
+  	-fx-background-color: #75C99E;
+  	-fx-text-fill: white;
+}
+
+.tab-pane .border{
+	-fx-border-color: #75C99E;
+    -fx-border-width: 1.0;
+    -fx-border-style: segments(1.0, 1.0);
+    -fx-background-insets: 0.0 0.0 0.0 0.0, 0.0, 1.0, 2.0;
+    -fx-border-insets: -2.0 ;
+    }
+    
+.border-pane .border{
+	-fx-border-color: #75C99E;
+    -fx-border-width: 1.0;
+    -fx-border-style: segments(1.0, 1.0);
+    -fx-background-insets: 0.0 0.0 0.0 0.0, 0.0, 1.0, 2.0;
+}
+
+
+.table-column {
+	-fx-text-fill: #212121;
+	-fx-font-size: 10.0pt;
+    -fx-font-family: Helvetica, Arial, sans-serif;
+	
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+
+.data-Icon{
+	-fx-background-image: url("2.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: 3.0;
+ 	
+}
+
+.open-Icon{
+	-fx-background-image: url("1.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: 3.0;
+ 	
+}
+
+.save-Icon{
+	-fx-background-image: url("7.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: 3.0;
+ 	
+}
+
+.Osave-Icon{
+	-fx-background-image: url("3.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: 3.0;
+ 	
+}
+
+.back-Icon{
+	-fx-background-image: url("4.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: 3.0;
+ 	
+}
+
+.forv-Icon{
+	-fx-background-image: url("5.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: 3.0;
+ 	
+}
+
+.bforv-Icon{
+	-fx-background-image: url("22.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: 3.0;
+ 	
+}
+
+.stand-Icon{
+	-fx-background-image: url("33.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: 3.0;
+ 	
+}
+
+.help-Icon{
+	-fx-background-image: url("black-dossier-16.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: 3.0;
+ 	
+}
+
+.pdf-Icon{
+	-fx-background-image: url("black-pdf-32.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: center;
+ 	
+}
+
+.csv-Icon{
+	-fx-background-image: url("black-csv-32.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: center;
+ 	
+}
+
+.txt-Icon{
+	-fx-background-image: url("black-txt-32.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: center;
+ 	
+}
+
+.back-Button{
+	-fx-background-image: url("back.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: center;
+ 	
+}
+
+.Forv-Button{
+	-fx-background-image: url("for.png");
+  	-fx-background-repeat: no-repeat;
+ 	-fx-background-position: center;
+ 	
+}
+
+
+.combo-box {
+    -fx-pref-width: 145;
+    -fx-pref-height: 25;
+    -fx-font-size: 9.0pt;
+}
+
+
+ 
+
+
+
+
+
+

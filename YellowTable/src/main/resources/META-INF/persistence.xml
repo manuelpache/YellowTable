@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="stundenplan" transaction-type="RESOURCE_LOCAL">
+		<class>Yellowstone.YellowTable.logic.components.Break</class>
+		<class>Yellowstone.YellowTable.logic.components.BreakUnit</class>
+		<class>Yellowstone.YellowTable.logic.components.Category</class>
+		<class>Yellowstone.YellowTable.logic.components.Class</class>
+		<class>Yellowstone.YellowTable.logic.components.Config</class>
+		<class>Yellowstone.YellowTable.logic.components.EducEmployee</class>
+		<class>Yellowstone.YellowTable.logic.components.ExternUnit</class>
+		<class>Yellowstone.YellowTable.logic.components.MeetingUnit</class>
+		<class>Yellowstone.YellowTable.logic.components.Person</class>
+		<class>Yellowstone.YellowTable.logic.components.PersonTime</class>
+		<class>Yellowstone.YellowTable.logic.components.Project</class>
+		<class>Yellowstone.YellowTable.logic.components.Room</class>
+		<class>Yellowstone.YellowTable.logic.components.SchoolUnit</class>
+		<class>Yellowstone.YellowTable.logic.components.Subject</class>
+		<class>Yellowstone.YellowTable.logic.components.Teacher</class>
+		<class>Yellowstone.YellowTable.logic.components.TeachingUnit</class>
+		<class>Yellowstone.YellowTable.logic.components.Timeslot</class>
+		<class>Yellowstone.YellowTable.logic.components.Unit</class>
+		<class>Yellowstone.YellowTable.logic.components.Years</class>
+		<class>Yellowstone.YellowTable.warnings.MultipleReservationWarning</class>
+		<class>Yellowstone.YellowTable.warnings.OverloadWarning</class>
+		<class>Yellowstone.YellowTable.warnings.Warning</class>
+		<class>Yellowstone.YellowTable.warnings.DistanceWarning</class>
+		<class>Yellowstone.YellowTable.warnings.ConflictWishesWarning</class>
+		
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby:Datenbank/Yellowtable.db;create=true" />
+			<property name="javax.persistence.jdbc.user" value="yellow" />
+			<property name="javax.persistence.jdbc.password" value="yellow" />
+			<property name="eclipselink.jdbc.exclusive-connection.mode"
+            value="Transactional" />
+			<property name="eclipselink.target-database" value="Derby" />
+			<property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.debug" value="ALL" />
+			<property name="eclipselink.weaving" value="static" />
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import jfxtras.scene.control.agenda.*?>
+
+<AnchorPane maxHeight="768.0" maxWidth="1024.0" minHeight="768.0"
+	minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" stylesheets="@StyleSheets/Main.css"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="Yellowstone.YellowTable.GUI.WishesViewController">
+	<children>
+		<Button layoutX="683.0" layoutY="35.0" minHeight="26.0"
+			mnemonicParsing="false" onAction="#btnRootLayout" prefHeight="30.0"
+			prefWidth="350.0" text="Speichern und zum Hauptmenü zurückkehren"
+			AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="35.0" />
+		<Text layoutX="11.0" layoutY="160.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Lehrerwünsche" wrappingWidth="388.0"
+			AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+			<font>
+				<Font size="32.0" />
+			</font>
+		</Text>
+		<Text layoutX="10.0" layoutY="70.0" strokeType="OUTSIDE"
+			strokeWidth="0.0"
+			text="Makieren Sie hier bitte die präferierten Zeiten ihres Lehrers."
+			wrappingWidth="388.0" AnchorPane.leftAnchor="10.0"
+			AnchorPane.topAnchor="56.0">
+			<font>
+				<Font size="13.0" />
+			</font>
+		</Text>
+		<Agenda fx:id="agendaTable" minHeight="550" minWidth="990.0"
+			prefHeight="550.0" prefWidth="990.0" AnchorPane.leftAnchor="15.0"
+			AnchorPane.rightAnchor="15.0" AnchorPane.bottomAnchor="15.0"
+			AnchorPane.topAnchor="100.0">
+		</Agenda>
+		<Button minHeight="42.0" minWidth="36.0" mnemonicParsing="false"
+			onAction="#bTxt" prefHeight="42.0" prefWidth="36.0" styleClass="txt-Icon"
+			AnchorPane.rightAnchor="397.0" AnchorPane.topAnchor="30.0">
+			<tooltip>
+				<Tooltip text="Als .txt exportieren" />
+			</tooltip>
+		</Button>
+		<Button minHeight="42.0" minWidth="36.0" mnemonicParsing="false"
+			onAction="#bCsv" prefHeight="42.0" prefWidth="36.0" styleClass="csv-Icon"
+			AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="30.0">
+			<tooltip>
+				<Tooltip text="Als .csv exportieren" />
+			</tooltip>
+		</Button>
+		<Button minHeight="42.0" minWidth="36.0" mnemonicParsing="false"
+			onAction="#bPdf" prefHeight="42.0" prefWidth="36.0" styleClass="pdf-Icon"
+			AnchorPane.rightAnchor="509.0" AnchorPane.topAnchor="30.0">
+			<tooltip>
+				<Tooltip text="Als .pdf exportieren" />
+			</tooltip>
+		</Button>
+	</children>
+</AnchorPane>

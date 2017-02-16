@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
+
+<?import jfxtras.scene.control.agenda.*?>
+<?import jfxtras.scene.control.agenda.Agenda?>
+<?import org.controlsfx.control.CheckComboBox?>
+<?import jfxtras.scene.control.LocalTimePicker?>
+<?import jfxtras.scene.control.LocalDateTimeTextField?>
+<?import jfxtras.scene.control.CalendarTimeTextField?>
+
+<ScrollPane minHeight="900.0" minWidth="1280.0"
+	style="-fx-background-color: #FDF8FF;" stylesheets="@StyleSheets/Main.css"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="Yellowstone.YellowTable.GUI.ClassTableViewController">
+	<content>
+		<AnchorPane maxHeight="900.0" maxWidth="1280.0" minHeight="900.0"
+			minWidth="1280.0" prefHeight="900.0" prefWidth="1280.0"
+			style="-fx-background-color: #FDF8FF;" stylesheets="@StyleSheets/Main.css">
+			<children>
+				<Label layoutX="14.0" layoutY="14.0" prefHeight="39.0"
+					prefWidth="335.0" text="Klassen-Stundenplan" AnchorPane.leftAnchor="10.0"
+					AnchorPane.topAnchor="10.0">
+					<font>
+						<Font size="32.0" />
+					</font>
+				</Label>
+				<Label layoutX="10.0" layoutY="49.0" prefHeight="27.0"
+					prefWidth="854.0"
+					text="Hier können sie den Stundenplan einer Klasse einsehen, bearbeiten und ausdrucken."
+					AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="62.0" />
+				<Button layoutX="1053.0" layoutY="15.0" minHeight="30.0"
+					minWidth="160.0" mnemonicParsing="false" onAction="#btnRootLayout"
+					text="Zum Hauptmenü zurückkehren" AnchorPane.leftAnchor="1053.0"
+					AnchorPane.topAnchor="15.0" />
+				<Agenda fx:id="agendaTable" layoutX="46.0" layoutY="110.0"
+					maxHeight="760" maxWidth="750.0" minHeight="760.0" minWidth="750.0"
+					prefWidth="750.0" AnchorPane.leftAnchor="10.0"
+					AnchorPane.topAnchor="95.0">
+				</Agenda>
+				<TitledPane animated="false" layoutX="775.0" layoutY="70.0"
+					maxHeight="474.0" maxWidth="1280.0" minHeight="450.0" minWidth="480.0"
+					prefHeight="474.0" prefWidth="480.0" text="Planungs-Box"
+					AnchorPane.leftAnchor="775.0" AnchorPane.topAnchor="62.0">
+					<content>
+						<TabPane>
+							<tabs>
+								<Tab fx:id="regTab" closable="false" text="Allgemein">
+									<content>
+										<AnchorPane minHeight="0.0" minWidth="0.0"
+											prefHeight="392.0" prefWidth="468.0">
+											<children>
+												<Group>
+													<children>
+														<RadioButton fx:id="rbBandNo" layoutX="394.0"
+															layoutY="25.0" mnemonicParsing="false" selected="true"
+															text="Nein">
+															<toggleGroup>
+																<ToggleGroup fx:id="Group" />
+															</toggleGroup>
+														</RadioButton>
+														<RadioButton fx:id="rbBand" layoutX="327.0"
+															layoutY="25.0" mnemonicParsing="false" text="Ja"
+															toggleGroup="$Group" />
+													</children>
+												</Group>
+												<CalendarTimeTextField fx:id="startTime"
+													layoutX="313.0" layoutY="270.0" prefHeight="26.0"
+													prefWidth="150.0" />
+												<CalendarTimeTextField fx:id="endTime"
+													layoutX="313.0" layoutY="320.0" prefHeight="26.0"
+													prefWidth="150.0" />
+												<Label layoutX="19.0" layoutY="175.0" text="Weitere Klassen">
+													<font>
+														<Font size="15.0" />
+													</font>
+												</Label>
+												<Label layoutX="19.0" layoutY="225.0" prefHeight="16.0"
+													prefWidth="128.0" text="Raum/Räume">
+													<font>
+														<Font size="15.0" />
+													</font>
+												</Label>
+												<Label layoutX="19.0" layoutY="275.0" text="Startzeit">
+													<font>
+														<Font size="15.0" />
+													</font>
+												</Label>
+												<Label layoutX="19.0" layoutY="325.0" prefHeight="16.0"
+													prefWidth="109.0" text="Endzeit">
+													<font>
+														<Font size="15.0" />
+													</font>
+												</Label>
+												<Label layoutX="20.0" layoutY="125.0" text="Teilnehmendes Personal">
+													<font>
+														<Font size="15.0" />
+													</font>
+												</Label>
+												<Label layoutX="20.0" layoutY="75.0"
+													text="Fach oder Stundeninhalt">
+													<font>
+														<Font size="15.0" />
+													</font>
+												</Label>
+												<Label layoutX="19.0" layoutY="25.0"
+													text="Handelt es sich um ein Band?">
+													<font>
+														<Font size="15.0" />
+													</font>
+												</Label>
+												<CheckComboBox fx:id="cbSubjects" layoutX="310.0"
+													layoutY="70.0" maxHeight="26.0" maxWidth="150.0" minWidth="150.0"
+													prefHeight="26.0" prefWidth="150.0">
+												</CheckComboBox>
+												<CheckComboBox fx:id="cbPersons" layoutX="310.0"
+													layoutY="120.0" maxHeight="26.0" maxWidth="150.0" minWidth="150.0"
+													prefHeight="26.0" prefWidth="150.0">
+												</CheckComboBox>
+												<CheckComboBox fx:id="cbClasses" layoutX="310.0"
+													layoutY="170.0" maxHeight="26.0" maxWidth="150.0" minWidth="150.0"
+													prefHeight="26.0" prefWidth="150.0">
+												</CheckComboBox>
+												<CheckComboBox fx:id="cbRooms" layoutX="310.0"
+													layoutY="220.0" maxHeight="26.0" maxWidth="150.0" minWidth="150.0"
+													prefHeight="26.0" prefWidth="150.0">
+												</CheckComboBox>
+												<Button layoutX="270.0" layoutY="373.0" minHeight="26.0"
+													minWidth="183.0" onAction="#btnNewUnit" text="Planungseinheit ändern"
+													AnchorPane.rightAnchor="14.0" />
+											</children>
+										</AnchorPane>
+									</content>
+								</Tab>
+								<Tab fx:id="inviTab" closable="false" text="Individuell">
+									<content>
+										<AnchorPane minHeight="0.0" minWidth="0.0"
+											prefHeight="180.0" prefWidth="200.0">
+											<children>
+												<ComboBox fx:id="indivTeach" layoutX="280.0"
+													layoutY="39.0" prefWidth="150.0" />
+												<CalendarTimeTextField fx:id="inviStartT"
+													layoutX="281.0" layoutY="103.0" prefHeight="26.0"
+													prefWidth="150.0" />
+												<CalendarTimeTextField fx:id="inviEndT"
+													layoutX="281.0" layoutY="164.0" prefHeight="26.0"
+													prefWidth="150.0" />
+												<Label layoutX="19.0" layoutY="41.0" text="Person">
+													<font>
+														<Font size="15.0" />
+													</font>
+												</Label>
+												<Label layoutX="19.0" layoutY="105.0" text="Startzeit">
+													<font>
+														<Font size="15.0" />
+													</font>
+												</Label>
+												<Label layoutX="19.0" layoutY="166.0" text="Endzeit">
+													<font>
+														<Font size="15.0" />
+													</font>
+												</Label>
+												<Button onAction="#inviTimes" layoutX="270.0"
+													layoutY="373.0" minHeight="26.0" minWidth="183.0" text="Zeit speichern" />
+											</children>
+										</AnchorPane>
+									</content>
+								</Tab>
+							</tabs>
+						</TabPane>
+					</content>
+				</TitledPane>
+				<TitledPane animated="false" layoutX="775.0" layoutY="549.0"
+					maxWidth="480.0" minHeight="325.0" minWidth="480.0" prefHeight="325.0"
+					prefWidth="480.0" text="Warnungs-Box" AnchorPane.leftAnchor="775.0">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<TableView fx:id="warningTable" maxHeight="260.0"
+									maxWidth="478.0" minHeight="254.0" minWidth="478.0" prefHeight="254.0"
+									prefWidth="478.0" style="-fx-border-color: transparent;;">
+									<columns>
+										<TableColumn fx:id="number" maxWidth="120.0"
+											minWidth="120.0" prefWidth="120.0" resizable="false"
+											style="-fx-border-color: transparent;" text="Warnungsnummer" />
+										<TableColumn fx:id="info" maxWidth="360.0"
+											minWidth="360.0" prefWidth="360.0" resizable="false"
+											style="-fx-border-color: transparent;" text="Hinweis" />
+									</columns>
+								</TableView>
+								<Button layoutX="294.0" layoutY="245.0" mnemonicParsing="false"
+									onAction="#btnShowallWarnings" text="Alle Warnungen anzeigen"
+									AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="254.0" />
+							</children>
+						</AnchorPane>
+					</content>
+				</TitledPane>
+				<Label layoutX="345.0" layoutY="20.0" text="Optionen:"
+					AnchorPane.leftAnchor="345.0">
+					<font>
+						<Font size="15.0" />
+					</font>
+				</Label>
+				<ComboBox fx:id="cbAdvert" layoutX="419.0" layoutY="15.0"
+					minHeight="30.0" minWidth="160.0" prefWidth="150.0" promptText="Anzeige"
+					AnchorPane.leftAnchor="419.0" AnchorPane.topAnchor="15.0" />
+				<Button onAction="#bPrint" layoutX="886.0" layoutY="15.0" mnemonicParsing="false"
+					prefHeight="30.0" prefWidth="142.0" text="Drucken" />
+				<Button layoutX="593.0" layoutY="15.0" mnemonicParsing="false"
+					onAction="#bUndo" prefHeight="30.0" prefWidth="47.0" styleClass="back-Button">
+					<tooltip>
+						<Tooltip text="Aktion rückgängig machen" />
+					</tooltip>
+				</Button>
+				<Button layoutX="651.0" layoutY="15.0" mnemonicParsing="false"
+					onAction="#bRedo" prefHeight="30.0" prefWidth="47.0" styleClass="Forv-Button">
+					<tooltip>
+						<Tooltip text="Aktion wiederherstellen" />
+					</tooltip>
+				</Button>
+				<Button layoutX="719.0" layoutY="10.0" mnemonicParsing="false"
+					onAction="#bPdf" prefHeight="42.0" prefWidth="36.0" styleClass="pdf-Icon">
+					<tooltip>
+						<Tooltip text="Als .pdf exportieren" />
+					</tooltip>
+				</Button>
+				<Button layoutX="772.0" layoutY="10.0" mnemonicParsing="false"
+					onAction="#bCsv" prefHeight="42.0" prefWidth="36.0" styleClass="csv-Icon">
+					<tooltip>
+						<Tooltip text="Als .csv exportieren" />
+					</tooltip>
+				</Button>
+				<Button layoutX="826.0" layoutY="10.0" mnemonicParsing="false"
+					onAction="#bTxt" prefHeight="42.0" prefWidth="36.0" styleClass="txt-Icon">
+					<tooltip>
+						<Tooltip text="Als .txt exportieren" />
+					</tooltip>
+				</Button>
+			</children>
+		</AnchorPane>
+	</content>
+</ScrollPane>

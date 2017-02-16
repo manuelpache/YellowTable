@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.controlsfx.control.*?>
+<?import org.controlsfx.control.spreadsheet.*?>
+
+<AnchorPane maxHeight="768.0" maxWidth="1024.0" minHeight="768.0"
+	minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" stylesheets="@StyleSheets/Main.css"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="Yellowstone.YellowTable.GUI.TeacherSubjectViewController">
+	<children>
+		<Label prefHeight="47.0" prefWidth="500.0" text="Personaleinsatzplan"
+			AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+			<font>
+				<Font size="32.0" />
+			</font>
+		</Label>
+		<Label prefHeight="27.0" prefWidth="800.0"
+			text="Hier können sie den Personaleinsatzplan einsehen und exportieren."
+			AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="62.0" />
+		<Button mnemonicParsing="false" onAction="#bPdf" prefHeight="42.0"
+			prefWidth="36.0" styleClass="pdf-Icon" AnchorPane.topAnchor="15.0"
+			AnchorPane.rightAnchor="359.0">
+			<tooltip>
+				<Tooltip text="Als .pdf exportieren" />
+			</tooltip>
+		</Button>
+		<Button mnemonicParsing="false" onAction="#bCsv" prefHeight="42.0"
+			prefWidth="36.0" styleClass="csv-Icon" AnchorPane.topAnchor="15.0"
+			AnchorPane.rightAnchor="308.0">
+			<tooltip>
+				<Tooltip text="Als .csv exportieren" />
+			</tooltip>
+		</Button>
+		<Button mnemonicParsing="false" onAction="#bTxt" prefHeight="42.0"
+			prefWidth="36.0" styleClass="txt-Icon" AnchorPane.rightAnchor="257.0"
+			AnchorPane.topAnchor="15.0">
+			<tooltip>
+				<Tooltip text="Als .txt exportieren" />
+			</tooltip>
+		</Button>
+		<Button onAction="#btnRootLayout" text="Zum Hauptmenü zurückkehren"
+			prefHeight="30.0" prefWidth="204.0" AnchorPane.rightAnchor="30.0"
+			AnchorPane.topAnchor="22.0" />
+		<SpreadsheetView fx:id="spreadsheet" editable="false"
+			maxWidth="100" prefHeight="300.0" prefWidth="100.0" showColumnHeader="true"
+			showRowHeader="true" AnchorPane.bottomAnchor="10.0"
+			AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+			AnchorPane.topAnchor="90.0" />
+	</children>
+</AnchorPane>
